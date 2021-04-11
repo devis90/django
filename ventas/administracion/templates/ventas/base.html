@@ -1,0 +1,66 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <title>Talleres Mobil</title>
+    {% load static %}
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static '/css/estilos.css' %}">
+</head>
+<body>
+    
+    <header id="header">
+        <img class="menu" src="{% static '/img/menuiconwhite.png' %}" alt="menu" id="menu">
+        <div class="contenedor_logo">
+            <img  class="logo"  src="{% static '/img/logo.png' %}" alt="logo">
+        </div>
+
+        <div>
+            
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}"> Inicio </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                    <li><a href="{% url 'galeria' %}">Galería</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <div id="contenido">
+        
+        {% block contenido %}
+        
+        {% endblock %}
+
+    </div>
+
+    <footer>
+        <div class="marcas">
+            <img src="{% static 'img/footer/bmw.png' %}" alt="apple">
+            <img src="{% static 'img/footer/chevrolet.png' %}" alt="lenovo">
+            <img src="{% static 'img/footer/hyundai.png' %}" alt="microsoft">
+            <img src="{% static 'img/footer/KIA.png' %}" alt="samsung">
+            <img src="{% static 'img/footer/toyota.png' %}" alt="xiaomi">
+        </div>
+        <div class="logo_footer">
+            <img src="{% static 'img/logo.png' %}" alt="logo">
+        </div>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="js/menu.js"></script>
+    
+    {% block js %}
+    {% endblock %}
+</body>
+</html>
